@@ -1,4 +1,4 @@
-package my.home.task;
+package by.online.home.task;
 
 import java.util.Scanner;
 
