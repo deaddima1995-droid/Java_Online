@@ -1,13 +1,13 @@
 package by.online.home.lesson;
 
 import java.util.Scanner;
-
+// РЎСѓС‰РµСЃС‚РІСѓРµС‚ Р»Рё С‚СЂРµСѓРіРѕР»СЊРЅРёРє РїРѕ Р·Р°РґР°РЅРЅС‹Рј РґРІСѓРј СѓРіР»Р°Рј
 public class Task_2_1 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		String outTrue = "Треугольник существует";
-		String outFalse = "Треугольник не существует";
+		String outTrue = "Г’Г°ГҐГіГЈГ®Г«ГјГ­ГЁГЄ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ";
+		String outFalse = "Г’Г°ГҐГіГЈГ®Г«ГјГ­ГЁГЄ Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ";
 		System.out.println("Write first angle:");
 		int angleFirst = input.nextInt();
 		System.out.println("Write secondd angle:");
