@@ -1,26 +1,26 @@
 package by.online.home.lesson;
 
 import java.util.Scanner;
-// Существует ли треугольник по заданным двум углам
+
 public class Task_2_1 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		String outTrue = "Треугольник существует";
-		String outFalse = "Треугольник не существует";
+		
 		System.out.println("Write first angle:");
 		int angleFirst = input.nextInt();
-		System.out.println("Write secondd angle:");
+		System.out.println("Write second angle:");
 		int angleSecond = input.nextInt();
 		
-		if (angleFirst <= 0 || angleSecond <= 0) {
-			System.out.println(outFalse);
+		if ((angleFirst <= 0 || angleSecond <= 0) | ((angleFirst + angleSecond) >= 180)) {
+			System.out.println("Треугольник не существует");
 			return;
 		}
-		else {
-			if (180 - angleFirst + angleSecond >= 1) {
-			System.out.println(outTrue);
+		if (angleFirst == 90 || angleSecond == 90) {
+		System.out.println("Треугольник существует, он прямоугольный");
 			}
+		else {
+			System.out.println("Треугольник существует");
 		}
 	}
 
