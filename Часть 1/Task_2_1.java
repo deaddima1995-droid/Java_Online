@@ -6,8 +6,8 @@ public class Task_2_1 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		String outTrue = "Òðåóãîëüíèê ñóùåñòâóåò";
-		String outFalse = "Òðåóãîëüíèê íå ñóùåñòâóåò";
+		String outTrue = "Треугольник существует";
+		String outFalse = "Треугольник не существует";
 		System.out.println("Write first angle:");
 		int angleFirst = input.nextInt();
 		System.out.println("Write secondd angle:");
