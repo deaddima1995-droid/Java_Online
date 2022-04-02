@@ -8,15 +8,14 @@ public class Task1 {
     public static void main(String[] args) {
         int firstAngle = RND.nextInt(180);
         int secondAngle = RND.nextInt(180);
-        String out = "First Angle:"+firstAngle+"\tSecond Angle:"+secondAngle+"\t";
+        String out = "First Angle:" + firstAngle + "\tSecond Angle:" + secondAngle + "\t";
 
         if (firstAngle + secondAngle < 180) {
             out = out.concat("Треугольник существует");
             if (firstAngle == 90 || secondAngle == 90 || 180 - firstAngle + secondAngle == 90) {
                 out = out.concat("\tТреугольник прямоугольный");
             }
-        }
-        else {
+        } else {
             out = out.concat("Треугольник не существует");
         }
 
