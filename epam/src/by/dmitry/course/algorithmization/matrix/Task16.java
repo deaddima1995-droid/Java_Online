@@ -1,22 +1,31 @@
 package by.dmitry.course.algorithmization.matrix;
 
 
+import java.util.Scanner;
+
 public class Task16 {
 
     public static void main(String[] args) {
-        int number = 6;
-
-        int magicConst = (number * (number * number + 1)) / 2;
-        int[][] matrix = new int[number][number];
-        System.out.println("Magic const " + magicConst);
-        if (number % 2 == 0 && number % 4 != 0) {
-            makeMagicSquareEven(matrix);
-        } else if (number % 4 == 0) {
-            makeMagicSquareEvenFour(matrix);
-        } else {
-            makeMagicSquareNotEven(matrix);
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Write matrix length - ");
+            int number = input.nextInt();
+            int magicConst = (number * (number * number + 1)) / 2;
+            int[][] matrix = new int[number][number];
+            System.out.println("Magic const " + magicConst);
+            if (number <= 2) {
+                System.out.println("Magic square impossible");
+                return;
+            } else if (number % 2 == 0 && number % 4 != 0) {
+                makeMagicSquareEven(matrix);
+            } else if (number % 4 == 0) {
+                makeMagicSquareEvenFour(matrix);
+            } else {
+                makeMagicSquareNotEven(matrix);
+            }
+            printMatrix(matrix);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
         }
-        printMatrix(matrix);
     }
 
     public static void makeMagicSquareEven(int[][] matrix) {
@@ -57,7 +66,19 @@ public class Task16 {
     }
 
     public static void makeMagicSquareEvenFour(int[][] matrix) {
-
+        boolean[][] flag = getFlag(matrix);
+        int tempConst = matrix.length * matrix.length + 1;
+        int counter = 1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (flag[i][j]) {
+                    matrix[i][j] = counter;
+                } else {
+                    matrix[i][j] = tempConst - counter;
+                }
+                counter++;
+            }
+        }
     }
 
     public static void makeMagicSquareNotEven(int[][] matrix) {
@@ -97,6 +118,26 @@ public class Task16 {
         int out = 0;
         for (int i = 6; i < number; i += 4) {
             out++;
+        }
+        return out;
+    }
+
+    public static boolean[][] getFlag(int[][] matrix) {
+        boolean[][] out = new boolean[matrix.length][matrix.length];
+        int y = matrix.length / 4;
+
+        for (int i = 0; i < out.length; i++) {
+            for (int j = 0; j < out[i].length; j++) {
+                if (i < y || i >= matrix.length - y) {
+                    if (j >= y && j < matrix.length - y) {
+                        out[i][j] = true;
+                    }
+                } else {
+                    if (j < y || j >= matrix.length - y) {
+                        out[i][j] = true;
+                    }
+                }
+            }
         }
         return out;
     }
