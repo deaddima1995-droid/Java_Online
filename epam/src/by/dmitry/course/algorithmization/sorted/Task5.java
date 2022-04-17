@@ -22,7 +22,9 @@ public class Task5 {
 
     public static int binarySearch(int[] array, int firstIndex, int lastIndex, int key) {
         int mid = firstIndex + (lastIndex - firstIndex) / 2;
-
+        if (mid >= lastIndex) {
+            return lastIndex;
+        }
         if (array[mid] == key) {
             return mid;
         } else if (array[mid] > key) {
