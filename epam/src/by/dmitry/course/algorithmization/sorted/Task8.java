@@ -1,5 +1,7 @@
 package by.dmitry.course.algorithmization.sorted;
 
+import by.dmitry.course.algorithmization.dekomposition.Task1;
+
 public class Task8 {
 
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class Task8 {
     public static void makeCommonDenominator(int[] numerator, int[] denominator) {
         int den = 1;
         for (int i = 0; i < denominator.length; i++) {
-            den *= denominator[i];
+            den = Task1.getNOK(den, denominator[i]);
         }
         for (int i = 0; i < denominator.length; i++) {
             numerator[i] = (den / denominator[i]) * numerator[i];

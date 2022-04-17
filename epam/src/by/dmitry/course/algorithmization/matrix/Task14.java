@@ -10,12 +10,8 @@ public class Task14 {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if (i < j) {
-                    matrix[i][j] = 1;
-                }
-                System.out.print("\t" + matrix[i][j]);
+
             }
-            System.out.println();
         }
     }
 }
