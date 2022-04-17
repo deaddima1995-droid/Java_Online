@@ -1,9 +1,9 @@
-package by.dmitry.course.algorithmization.dekomposition;
+package by.dmitry.course.algorithmization.decomposition;
 
 public class Task1 {
 
     public static void main(String[] args) {
-        System.out.println(getNOK(5,3));
+        System.out.println(getNOK(-5,3));
     }
 
     public static int getNOK(int firstNumber, int secondNumber) {

@@ -1,6 +1,6 @@
 package by.dmitry.course.algorithmization.sorted;
 
-import by.dmitry.course.algorithmization.dekomposition.Task1;
+import by.dmitry.course.algorithmization.decomposition.Task1;
 
 public class Task8 {
 
