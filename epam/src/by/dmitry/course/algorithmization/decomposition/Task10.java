@@ -9,12 +9,12 @@ public class Task10 {
         int[] array = new int[10];
         int number = 365;
         for (int i = 0; i < array.length; i++) {
-            array[i] = getNumberFromArray(number);
+            array[i] = getNumberFromNumber(number);
             System.out.print("\t" + array[i]);
         }
     }
 
-    public static int getNumberFromArray(int number) {
+    public static int getNumberFromNumber(int number) {
         int[] numbers = getArrayFromNumber(number);
         int counterOfNumbers = RND.nextInt(1, 5);
         int out = 0;

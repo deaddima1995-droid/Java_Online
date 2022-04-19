@@ -5,9 +5,13 @@ public class Task12 {
     public static void main(String[] args) {
         int numberK = 13;
         int numberN = 170;
-        int[] arrayA = generateArray(numberK, numberN);
-        for (int i = 0; i < arrayA.length; i++) {
-            System.out.print("\t" + arrayA[i]);
+        int[] out = generateMemberOfArray(numberK, numberN);
+        printArray(out);
+    }
+
+    public static void printArray(int[] array) {
+        for (int j : array) {
+            System.out.print("\t" + j);
         }
     }
 
@@ -18,7 +22,7 @@ public class Task12 {
         return temp;
     }
 
-    public static int[] generateArray(int k, int n) {
+    public static int[] generateMemberOfArray(int k, int n) {
         int i = 0;
         int[] array = new int[0];
         while (i <= n) {
