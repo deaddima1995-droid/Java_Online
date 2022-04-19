@@ -8,7 +8,7 @@ public class Task4 {
         Point[] points = new Point[10];
         double maxDistance = Integer.MIN_VALUE;
 
-        for (int i = 0; i < points.length; i++) {
+        for (int i = 0; i < points.length - 1; i++) {
             points[i] = new Point();
             if (i != 0) {
                 maxDistance = Math.max(maxDistance, points[i].searchTheLongestDistanceBetweenPoints(points[i - 1]));
