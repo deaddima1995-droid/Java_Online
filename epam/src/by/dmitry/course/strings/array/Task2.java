@@ -5,40 +5,32 @@ import java.util.Arrays;
 public class Task2 {
 
     public static void main(String[] args) {
-       char[] text = "helloNewWorld".toCharArray();
-       text = replaceWordInCharArray(text,5,"new".toCharArray(),"carick".toCharArray());
-       Task1.printCharArray(text);
+        char[] text = "OneWorldOne".toCharArray();
+        text = replaceAllWordInCharArray(text, "One".toCharArray(), "Three".toCharArray());
+        //text = replaceWordInCharArray(text, 5, "one".toCharArray(), "go".toCharArray());
+        Task1.printCharArray(text);
     }
 
-    public static char[] addWordToCharArray(char[] chars, int index, char[] word) {
-        char[] out = Arrays.copyOf(Arrays.copyOfRange(chars,0,index), index + word.length);
-        for (int i = index, y = 0; y < word.length; i++, y++) {
-            out[i] = word[y];
-        }
-        return out;
-    }
-
-    public static char[] replaceWordInCharArray(char[] chars, int indexStart, char[] oldWord, char[] word) {
-        char[] temp = new char[chars.length - oldWord.length + word.length];
+    public static char[] replaceWordInCharArray(char[] chars, int indexStart, char[] oldWord, char[] newWord) {
+        char[] temp = new char[chars.length - oldWord.length + newWord.length];
         for (int i = 0; i < chars.length; i++) {
             if (i < indexStart) {
                 temp[i] = chars[i];
-            } else if (i > indexStart + word.length){
-                temp[i + word.length] = chars[i];
+            } else if (i >= indexStart + oldWord.length) {
+                temp[i + newWord.length - oldWord.length] = chars[i];
             }
         }
-        for (int i = 0; i < word.length; i++) {
-            temp[i + indexStart] = word[i];
+        for (int i = 0; i < newWord.length; i++) {
+            temp[i + indexStart] = newWord[i];
         }
         return temp;
     }
 
-    public static char[] replaceAllWordInCharArray(char[] chars,char[] oldWord, char[] newWord) {
-        char[] out = new char[0];
+    public static char[] replaceAllWordInCharArray(char[] chars, char[] oldWord, char[] newWord) {
+        char[] out = chars;
         for (int i = 0; i < chars.length; i++) {
-            if (isArrayHasThisWord(chars,oldWord,i)) {
-                System.out.println("Have word in index " + i);
-                out = addWordToCharArray(chars,i,newWord);
+            if (isArrayHasThisWord(out, oldWord, i)) {
+                out = replaceWordInCharArray(out, i, oldWord, newWord);
                 i += newWord.length - 1;
             }
         }
