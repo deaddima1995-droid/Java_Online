@@ -1,13 +1,11 @@
 package by.dmitry.course.strings.array;
 
-import java.util.Arrays;
-
 public class Task2 {
 
     public static void main(String[] args) {
-        char[] text = "OneWorldOne".toCharArray();
-        text = replaceAllWordInCharArray(text, "One".toCharArray(), "Three".toCharArray());
-        //text = replaceWordInCharArray(text, 5, "one".toCharArray(), "go".toCharArray());
+        char[] text = "write letter hello world write".toCharArray();
+        Task1.printCharArray(text);
+        text = replaceAllWordInCharArray(text, "write".toCharArray(), "letter".toCharArray());
         Task1.printCharArray(text);
     }
 
