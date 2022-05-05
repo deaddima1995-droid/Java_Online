@@ -1,15 +1,19 @@
 package by.dmitry.course.classes.object.task10;
 
+import by.dmitry.course.classes.object.task10.data.DayOfWeek;
+import by.dmitry.course.classes.object.task10.data.Destination;
+import by.dmitry.course.classes.object.task10.data.Plane;
+
 import java.time.LocalTime;
 
 public class Airline {
     private int numberPlane;
-    private String destination;
+    private Destination destination;
     private Plane typeAirline;
     private LocalTime departureTime;
     private DayOfWeek departureDate;
 
-    public Airline(int numberPlane, String destination, Plane typeAirline, LocalTime departureTime, DayOfWeek departureDate) {
+    public Airline(int numberPlane, Destination destination, Plane typeAirline, LocalTime departureTime, DayOfWeek departureDate) {
         this.numberPlane = numberPlane;
         this.destination = destination;
         this.typeAirline = typeAirline;
@@ -21,7 +25,7 @@ public class Airline {
         return numberPlane;
     }
 
-    public String getDestination() {
+    public Destination getDestination() {
         return destination;
     }
 

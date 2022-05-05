@@ -1,4 +1,4 @@
-package by.dmitry.course.classes.object.task10;
+package by.dmitry.course.classes.object.task10.data;
 
 public enum Plane {
     BOING747("Boing 747"),
