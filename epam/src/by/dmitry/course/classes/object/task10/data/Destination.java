@@ -7,6 +7,8 @@ public enum Destination {
     BERLIN(20),
     NEW_YORK(34);
 
+    public final int numberLine;
     Destination(int numberLine) {
+        this.numberLine = numberLine;
     }
 }
