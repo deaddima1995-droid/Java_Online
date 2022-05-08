@@ -19,14 +19,14 @@ public class Car {
     public void drive() {
         double length = RND.nextInt((int) (fuel * engine.value));
         fuel -= length;
-        System.out.printf("Машина потратила %.1f топлива, остаток - %.1f", length, fuel);
+        System.out.printf("Машина %s потратила %.1f топлива, остаток - %.1f\n", brand, length, fuel);
     }
 
     public void refuel() {
         double temp = 100 - fuel;
         if (fuel != 100) {
             fuel += temp;
-            System.out.printf("Машину заправили на %.1f литр(-ов", temp);
+            System.out.printf("Машину %s заправили на %.1f литр(-ов\n", brand, temp);
         } else {
             System.out.println("Машину не нужно заправлять");
         }
@@ -38,5 +38,15 @@ public class Car {
 
     public void printCarBrand() {
         System.out.println("Brand car is " + brand);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", wheels=" + wheels +
+                ", engine=" + engine +
+                ", fuel=" + fuel +
+                '}';
     }
 }
