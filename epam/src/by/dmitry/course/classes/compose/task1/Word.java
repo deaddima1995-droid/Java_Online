@@ -7,7 +7,12 @@ public class Word {
         this.word = word;
     }
 
-    public void toUpperCase() {
-        word = word.toUpperCase();
+    public Word toUpperCase() {
+        return new Word(word.toUpperCase());
+    }
+
+    @Override
+    public String toString() {
+        return word + " ";
     }
 }

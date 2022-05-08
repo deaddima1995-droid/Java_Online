@@ -22,4 +22,17 @@ public class Text {
     public void printTitle() {
         System.out.println(title);
     }
+
+    private String getString() {
+        StringBuilder builder = new StringBuilder();
+        for (Sentence sentence : text) {
+            builder.append(sentence);
+        }
+        return builder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s \n %s", title, getString());
+    }
 }
