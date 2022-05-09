@@ -11,7 +11,6 @@ public class Main {
         audi.drive();
         bmw.drive();
         audi.refuel();
-        bmw.refuel();
         bmw.changeWheels(Wheel.R16);
         System.out.println(bmw);
     }

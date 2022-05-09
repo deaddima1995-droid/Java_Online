@@ -18,8 +18,12 @@ public class Car {
 
     public void drive() {
         double length = RND.nextInt((int) (fuel * engine.value));
-        fuel -= length;
-        System.out.printf("Машина %s потратила %.1f топлива, остаток - %.1f\n", brand, length, fuel);
+        if (length == 0) {
+            System.out.println("Машину нужно заправлять");
+        } else {
+            fuel -= length;
+            System.out.printf("Машина %s потратила %.1f топлива, остаток - %.1f\n", brand, length, fuel);
+        }
     }
 
     public void refuel() {
